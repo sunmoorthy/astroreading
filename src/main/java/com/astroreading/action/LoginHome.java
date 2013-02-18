@@ -1,15 +1,21 @@
 package com.astroreading.action;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.astroreading.model.User;
+import com.astroreading.security.SecurityUtil;
 import com.astroreading.service.UserService;
 import com.google.common.base.Strings;
 import com.opensymphony.xwork2.ActionSupport;
 
+@Namespace(value = "/auth")
 @Results({
 	@Result(name = "success", location = "/index.jsp"),
 	@Result(name = "loginForm", location = "/pages/login.jsp"),
@@ -19,6 +25,7 @@ public class LoginHome extends ActionSupport {
 
 	@Autowired
 	private UserService userService;
+
 	/**
 	 * 
 	 */
@@ -28,18 +35,20 @@ public class LoginHome extends ActionSupport {
 	private String password;
 	private User user;
 
-	@Action("")
+	@Action("home")
 	public String execute() {
 		return SUCCESS;
 	}
 
 	@Action("login")
 	public String login() {
+		final HttpSession session = ServletActionContext.getRequest().getSession(true);
 		if (Strings.isNullOrEmpty(email) || Strings.isNullOrEmpty(password)) {
 			return "loginForm";
 		}
 		user = userService.findUserByLogin(email, password);
 		if (user != null) {
+			SecurityUtil.setSessionUser(session, user);
 			return "loginSuccess";
 		}
 		return SUCCESS;

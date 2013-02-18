@@ -1,5 +1,5 @@
 body{
-	background-image:url('/astroreading/images/planets.jpg');
+	background-image:url('/astroreading/imagesaa/planets.jpg');
 }
 
 h2 {
@@ -14,7 +14,7 @@ div {
 
 #outerBody {
 	margin: 10px 400px 10px 300px;
-	background-color:white;
+	background-color:#EAEAF2;
 	width: 1000px;
 	height: 600px;
 }

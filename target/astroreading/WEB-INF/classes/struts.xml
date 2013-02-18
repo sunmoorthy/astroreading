@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.objectFactory" value="spring" />
+	
+	<constant name="struts.devMode" value="false" />
+	
+	<constant name="struts.action.extension" value="" />
+	<constant name="struts.action.excludePattern" value="/images/.*,/js/.*,/css/.*,/robots.txt,/sitemap.xml,/webService/.*" />
+	<constant name="struts.custom.i18n.resources" value="struts_messages" />
+	<constant name="struts.multipart.maxSize" value="999999999999" />
+	<constant name="struts.convention.default.parent.package" value="base" />
+	
+	
+	
+	<package name="base" extends="struts-default">
+		<interceptors>
+			<interceptor name="securityInterceptor" class="com.astroreading.interceptor.SecurityInterceptor"></interceptor>
+			<interceptor-stack name="secureStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="securityInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+	</package>
+	
+
+</struts>
+
+

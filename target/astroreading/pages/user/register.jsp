@@ -1,5 +1,4 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<s:include value="/pages/common/header.jsp"></s:include>
+<%@ include file="/pages/common/header.jsp" %>
 <div class="left"></div>
 <div class="right">
 	<form method="post" action="/astroreading/user/register">
@@ -23,8 +22,8 @@
 				<label>Date of Birth:(MM/DD/YYYY)</label>
 				<input type="password" name="user.dateOfBirth" maxlength="50"/>
 			</div>
-			<input type="submit" value="Login"/>
+			<input type="submit" value="Register"/>
 		</form>
 	
 </div>
-<s:include value="/pages/common/footer.jsp"></s:include>
+<%@ include file="/pages/common/footer.jsp" %>

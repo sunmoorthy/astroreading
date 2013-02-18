@@ -1,6 +1,8 @@
 package com.astroreading.action;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.InterceptorRef;
+import org.apache.struts2.convention.annotation.InterceptorRefs;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
@@ -15,6 +17,9 @@ import com.opensymphony.xwork2.ActionSupport;
 	@Result(name = "success", location = "/pages/user/userHome.jsp"),
 	@Result(name = "register", location = "/pages/user/userHome.jsp"),
 	@Result(name = "registerForm", location = "/pages/user/register.jsp")
+})
+@InterceptorRefs({
+	@InterceptorRef("secureStack"),
 })
 public class UserHome extends ActionSupport {
 
