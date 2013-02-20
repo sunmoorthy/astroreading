@@ -19,7 +19,8 @@ public class User {
 	private String dateOfBirth;
 	private Calendar createdDate;
 	private Calendar updatedDate;
-	private List<AstroProfile> astroProfile;
+	private AstroProfile astroProfile;
+	private Address address;
 
 	public String getId() {
 		return id;
@@ -77,20 +78,28 @@ public class User {
 		this.updatedDate = updatedDate;
 	}
 
-	public List<AstroProfile> getAstroProfile() {
-		return astroProfile;
-	}
-
-	public void setAstroProfile(List<AstroProfile> astroProfile) {
-		this.astroProfile = astroProfile;
-	}
-
 	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
 	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+	}
+
+	public AstroProfile getAstroProfile() {
+		return astroProfile;
+	}
+
+	public void setAstroProfile(AstroProfile astroProfile) {
+		this.astroProfile = astroProfile;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 }
