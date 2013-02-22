@@ -19,13 +19,16 @@ import com.opensymphony.xwork2.ActionSupport;
 @Results({
 	@Result(name = "success", location = "/index.jsp"),
 	@Result(name = "loginForm", location = "/pages/login.jsp"),
-	@Result(name = "loginSuccess", location = "/pages/user/userHome.jsp")
+	@Result(name = "loginSuccess", location = "/pages/user/userHome.jsp"),
+	@Result(name = "register", location = "/pages/login.jsp"),
+	@Result(name = "registerForm", location = "/pages/user/register.jsp"),
+	@Result(name = "logoutSuccess", location = "/index.jsp"),
 })
 public class LoginHome extends ActionSupport {
 
 	@Autowired
 	private UserService userService;
-
+	
 	/**
 	 * 
 	 */
@@ -53,6 +56,24 @@ public class LoginHome extends ActionSupport {
 		}
 		return SUCCESS;
 	}
+	
+	@Action("logout")
+	public String logout() {
+		SecurityUtil.clearSession();
+		return "logoutSuccess";
+	}
+	
+	
+	
+	@Action("register")
+	public String register() {
+		if (user == null) {
+			return "registerForm";
+		}
+		userService.register(user);
+		return "register";
+	}
+	
 
 	public String getEmail() {
 		return email;
@@ -77,5 +98,6 @@ public class LoginHome extends ActionSupport {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
 
 }

@@ -15,8 +15,6 @@ import com.opensymphony.xwork2.ActionSupport;
 @Namespace("/user")
 @Results({
 	@Result(name = "success", location = "/pages/user/userHome.jsp"),
-	@Result(name = "register", location = "/pages/user/userHome.jsp"),
-	@Result(name = "registerForm", location = "/pages/user/register.jsp")
 })
 @InterceptorRefs({
 	@InterceptorRef("secureStack"),
@@ -37,21 +35,8 @@ public class UserHome extends ActionSupport {
 		return SUCCESS;
 	}
 
-	@Action("register")
-	public String register() {
-		if (user == null) {
-			return "registerForm";
-		}
-		userService.register(user);
-		return "register";
-	}
+	
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 
 }

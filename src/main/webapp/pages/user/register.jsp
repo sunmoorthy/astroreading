@@ -1,7 +1,7 @@
 <%@ include file="/pages/common/header.jsp" %>
-<div class="left"></div>
-<div class="right">
-	<form method="post" action="/astroreading/user/register">
+<!-- <div class="left"></div> -->
+<div class="main">
+	<form method="post" action="/astroreading/auth/register">
 			<div>
 				<label>First Name:</label>
 				<input type="text" name="user.firstName" maxlength="50"/>

@@ -5,19 +5,22 @@
 </head>
 <body>
 	<div id="outerBody">
-		<h2>Welcome to Astro Reading</h2>
-			<div id="header">
-				<div style="float:right;padding:10px 10px 10px 10px">
-					<a href="/astroreading/user/register">Register</a>
+		<div id="title"><h2>Welcome to Astro Reading</h2></div>
+			<div id="registerLink">
 					  <c:choose>
     						<c:when test="${sessionScope['SESSION_USER'] == null}">
+    							<a href="/astroreading/auth/register">Register</a>
 								<a href="/astroreading/auth/login">Login</a>
 							</c:when>
 							<c:otherwise>
 								Welcome, <c:out value="${sessionScope['SESSION_USER'].firstName}"/> <c:out value="${sessionScope['SESSION_USER'].lastName}"/>
+								<a href="/astroreading/auth/logout">Logout</a>
 							</c:otherwise>
 						</c:choose>
-				</div>
 			</div>
+			<div id="header">
+				<a href="">Horoscopes</a> | <a href="">Astrology</a> | <a href="">Contact Us</a> | <a href="">About Us</a>
+			</div>
+			
 
 	
