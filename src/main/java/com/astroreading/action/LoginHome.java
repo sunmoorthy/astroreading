@@ -1,14 +1,19 @@
 package com.astroreading.action;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.astroreading.model.Country;
 import com.astroreading.model.User;
 import com.astroreading.security.SecurityUtil;
 import com.astroreading.service.UserService;
@@ -24,7 +29,7 @@ import com.opensymphony.xwork2.ActionSupport;
 	@Result(name = "registerForm", location = "/pages/user/register.jsp"),
 	@Result(name = "logoutSuccess", location = "/index.jsp"),
 })
-public class LoginHome extends ActionSupport {
+public class LoginHome extends BaseHome {
 
 	@Autowired
 	private UserService userService;
@@ -37,11 +42,14 @@ public class LoginHome extends ActionSupport {
 	private String email;
 	private String password;
 	private User user;
+	
 
 	@Action("home")
 	public String execute() {
 		return SUCCESS;
 	}
+	
+	
 
 	@Action("login")
 	public String login() {
@@ -98,6 +106,10 @@ public class LoginHome extends ActionSupport {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	
+	
+	
 	
 
 }

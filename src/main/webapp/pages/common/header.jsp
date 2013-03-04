@@ -1,7 +1,11 @@
 <%@ include file="/pages/common/include.jsp" %>
+<!DOCTYPE HTML>
 <html>
 <head>
 	<link type="text/css" rel="stylesheet" href="/astroreading/css/default.css"></link>
+	<script type="text/javascript" src="/astroreading/js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="/astroreading/js/jquery-ui-1.8.15.custom.min.js"></script>
+	<script type="text/javascript" src="/astroreading/js/jquery-ui-timepicker-addon.js"></script>
 </head>
 <body>
 	<div id="outerBody">

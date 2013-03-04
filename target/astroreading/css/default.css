@@ -1,28 +1,38 @@
 body{
-	background-image:url('/astroreading/imagesaa/planets.jpg');
+	background-image:url('/astroreading/images/planetsss.jpg');
 }
 
 h2 {
 	font-family: cursive;
 	font-color: #cc0000;
-	padding:5px 50px 5px 50px;
+	margin: 0px 0px 0px 0px;
+	padding: 5px 5px 5px 5px;
 }
 
 div {
 	border-radius: 5px;
 }
-
+#title {
+	width:500px;
+	float:left;
+}
 #outerBody {
-	margin: 10px 400px 10px 300px;
-	background-color:#EAEAF2;
+	margin: 10px 300px 10px 400px;
+	background-color:#E0E4CC;
 	width: 1000px;
-	height: 600px;
+	height: 700px;
 }
 
 #header {
 	height: 50px;
-	background-color: #F38630;
-	margin-bottom: 10px;
+	background-color: #E0E4CC;
+	clear:left;
+	border-style:solid;
+	border-bottom-color:blue;
+	border-width:thin;
+	text-align:right;
+	margin: 5px 5px 0px 5px;
+	padding: 5px 5px 0px 5px;
 }
 
 .left {
@@ -33,18 +43,28 @@ div {
 	margin-bottom: 10px;
 }
 
-.right {
-	height: 300px;
-	width: 450px;
+.main {
 	background-color: #E0E4CC;
-	float: right;
+	float: left;
 	margin-bottom: 10px;
+	height:500px;
+	padding: 5px 5px 5px 5px;
 }
 
 #footer {
 	height: 50px;
-	background-color: #69D2E7;
-    clear: both;
-	/*Add your CSS here!*/
+	background-color: #E0E4CC;
+    clear: left;
+	text-align:center;
+	color: #000000;
+}
 
+#registerLink{
+	width:300px;
+	height:25px;
+	margin: 0px 0px 0px 0px;
+	float:right;
+	padding: 5px 5px 5px 5px;
+	text-align:right;
+	
 }

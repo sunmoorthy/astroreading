@@ -14,9 +14,6 @@
 	<constant name="struts.custom.i18n.resources" value="struts_messages" />
 	<constant name="struts.multipart.maxSize" value="999999999999" />
 	<constant name="struts.convention.default.parent.package" value="base" />
-	
-	
-	
 	<package name="base" extends="struts-default">
 		<interceptors>
 			<interceptor name="securityInterceptor" class="com.astroreading.interceptor.SecurityInterceptor"></interceptor>

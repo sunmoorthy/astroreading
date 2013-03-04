@@ -1,7 +1,18 @@
 <%@ include file="/pages/common/header.jsp" %>
-<div class="left"></div>
-<div class="right">
-	<form method="post" action="/astroreading/user/register">
+<script>
+	$(document).ready(function () {
+		var request = $.ajax({
+			url:'/astroreading/config/countries',
+			type:'GET',
+		}).done(function(response , status , jqXHR){
+			alert(response)
+		})
+		
+	})
+</script>
+<!-- <div class="left"></div> -->
+<div class="main">
+	<form method="post" action="/astroreading/auth/register">
 			<div>
 				<label>First Name:</label>
 				<input type="text" name="user.firstName" maxlength="50"/>
@@ -22,6 +33,16 @@
 				<label>Date of Birth:(MM/DD/YYYY)</label>
 				<input type="password" name="user.dateOfBirth" maxlength="50"/>
 			</div>
+			<div id="country">
+				<select name="countries">
+					
+				</select>
+			</div>
+			<div id="country">
+				<select name="states">
+				</select>
+			</div>
+			
 			<input type="submit" value="Register"/>
 		</form>
 	
