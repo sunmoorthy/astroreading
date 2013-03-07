@@ -1,7 +1,11 @@
 package com.astroreading.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Country {
 
+	
 	private String code;
 	private String name;
 	public String getCode() {

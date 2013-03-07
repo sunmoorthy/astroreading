@@ -6,27 +6,23 @@ import java.util.List;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.astroreading.model.Country;
+import com.astroreading.service.ConfigService;
 
 @Namespace(value = "/config")
 public class ConfigHome extends JsonBaseHome{
 
 	private List<Country> countries;
 	
+	@Autowired
+	private ConfigService configService;
 	@Action(value="countries",results = {
 		    @Result(name="success", type="json")
 		})
 		public String countries() {
-			countries = new ArrayList<Country>();
-			Country country = new Country();
-			country.setCode("IND");
-			country.setName("India");
-			countries.add(country);
-			country = new Country();
-			country.setCode("USA");
-			country.setName("United States of America");
-			countries.add(country);
+			countries = configService.getCountries();
 			return SUCCESS;
 		}
 

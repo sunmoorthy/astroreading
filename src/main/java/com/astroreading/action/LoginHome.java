@@ -28,6 +28,9 @@ import com.opensymphony.xwork2.ActionSupport;
 	@Result(name = "register", location = "/pages/login.jsp"),
 	@Result(name = "registerForm", location = "/pages/user/register.jsp"),
 	@Result(name = "logoutSuccess", location = "/index.jsp"),
+	@Result(name = "aboutus", location = "/aboutUs.jsp"),
+	@Result(name = "contactus", location = "/contactUs.jsp"),
+	
 })
 public class LoginHome extends BaseHome {
 
@@ -80,6 +83,18 @@ public class LoginHome extends BaseHome {
 		}
 		userService.register(user);
 		return "register";
+	}
+	
+	@Action("aboutus")
+	public String aboutUs() {
+		
+		return "aboutus";
+	}
+	
+	@Action("contactus")
+	public String contactUs() {
+		
+		return "contactus";
 	}
 	
 

@@ -17,6 +17,10 @@ public class User {
 	private String email;
 	private String password;
 	private String dateOfBirth;
+	private String timeOfBirth;
+	private String countryOfBirth;
+	private String stateOfBirth;
+	private String cityOfBirth;
 	private Calendar createdDate;
 	private Calendar updatedDate;
 	private AstroProfile astroProfile;
@@ -101,5 +105,39 @@ public class User {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	public String getTimeOfBirth() {
+		return timeOfBirth;
+	}
+
+	public void setTimeOfBirth(String timeOfBirth) {
+		this.timeOfBirth = timeOfBirth;
+	}
+
+	public String getCountryOfBirth() {
+		return countryOfBirth;
+	}
+
+	public void setCountryOfBirth(String countryOfBirth) {
+		this.countryOfBirth = countryOfBirth;
+	}
+
+	public String getStateOfBirth() {
+		return stateOfBirth;
+	}
+
+	public void setStateOfBirth(String stateOfBirth) {
+		this.stateOfBirth = stateOfBirth;
+	}
+
+	public String getCityOfBirth() {
+		return cityOfBirth;
+	}
+
+	public void setCityOfBirth(String cityOfBirth) {
+		this.cityOfBirth = cityOfBirth;
+	}
+	
+	
 
 }

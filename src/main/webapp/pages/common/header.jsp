@@ -3,6 +3,7 @@
 <html>
 <head>
 	<link type="text/css" rel="stylesheet" href="/astroreading/css/default.css"></link>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 	<script type="text/javascript" src="/astroreading/js/jquery-1.6.2.min.js"></script>
 	<script type="text/javascript" src="/astroreading/js/jquery-ui-1.8.15.custom.min.js"></script>
 	<script type="text/javascript" src="/astroreading/js/jquery-ui-timepicker-addon.js"></script>
@@ -23,7 +24,7 @@
 						</c:choose>
 			</div>
 			<div id="header">
-				<a href="">Horoscopes</a> | <a href="">Astrology</a> | <a href="">Contact Us</a> | <a href="">About Us</a>
+				<a href="/astroreading/auth/home">Horoscopes</a> | <a href="/astroreading/auth/home">Astrology</a> |  <a href="/astroreading/auth/aboutus">About Us</a> | <a href="/astroreading/auth/contactus">Contact Us</a>
 			</div>
 			
 

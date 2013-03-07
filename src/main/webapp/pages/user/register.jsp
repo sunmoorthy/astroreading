@@ -5,8 +5,19 @@
 			url:'/astroreading/config/countries',
 			type:'GET',
 		}).done(function(response , status , jqXHR){
-			alert(response)
+			$.each(response.countries , function(){
+				$('#countrySelect').append("<option value='"+ $(this).attr('code') +"'>"+ $(this).attr('name') +"</option")
+			})
 		})
+		
+		$('.dateofbirthPicker').datepicker({
+			      changeMonth: true,
+			      changeYear: true
+			    });
+		$('.timeofbirthPicker').timepicker({
+			showSecond: true,
+		    timeFormat: 'hh:mm:ss'
+		    });
 		
 	})
 </script>
@@ -31,18 +42,27 @@
 			</div>
 			<div>
 				<label>Date of Birth:(MM/DD/YYYY)</label>
-				<input type="password" name="user.dateOfBirth" maxlength="50"/>
-			</div>
-			<div id="country">
-				<select name="countries">
-					
-				</select>
-			</div>
-			<div id="country">
-				<select name="states">
-				</select>
+				<input type="text" name="user.dateOfBirth" maxlength="50" class="dateofbirthPicker"/>
 			</div>
 			
+			<div>
+				<label>Time of Birth:(HH:MM:SS)</label>
+				<input type="text" name="user.timeOfBirth" maxlength="50" class="timeofbirthPicker"/>
+			</div>
+			<div>
+				<label>City of Birth</label>
+				<input type="text" name="user.placeOfBirth" maxlength="50"/>
+			</div>
+			<div id="state">
+				<label>State of Birth</label>
+				<select name="user.stateOfBirth" id="stateSelect">
+				</select>
+			</div>
+			<div id="country">
+				<label>Country of Birth</label>
+				<select name="user.countryOfBirth" id="countrySelect">
+				</select>
+			</div>
 			<input type="submit" value="Register"/>
 		</form>
 	
