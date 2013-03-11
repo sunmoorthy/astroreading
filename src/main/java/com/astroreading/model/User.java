@@ -24,7 +24,9 @@ public class User {
 	private Calendar createdDate;
 	private Calendar updatedDate;
 	private AstroProfile astroProfile;
-	private Address address;
+	private Address billingAddress;
+	private List<Transaction> transactions;
+	
 
 	public String getId() {
 		return id;
@@ -98,13 +100,7 @@ public class User {
 		this.astroProfile = astroProfile;
 	}
 
-	public Address getAddress() {
-		return address;
-	}
-
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+	
 
 	public String getTimeOfBirth() {
 		return timeOfBirth;
@@ -137,6 +133,23 @@ public class User {
 	public void setCityOfBirth(String cityOfBirth) {
 		this.cityOfBirth = cityOfBirth;
 	}
+
+	public Address getBillingAddress() {
+		return billingAddress;
+	}
+
+	public void setBillingAddress(Address billingAddress) {
+		this.billingAddress = billingAddress;
+	}
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
+	
 	
 	
 
